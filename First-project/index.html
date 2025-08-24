@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Login - Biznesingiz uchun tizim</title>
+  <meta name="description" content="Bizning CRM tizimimiz orqali biznesingizni rivojlantiring. Login qiling va mijozlarni boshqarishni samarali boshlang.">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9fb;
+      color: #222;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    aside {
+      flex: 1;
+      background: linear-gradient(135deg, #5a2ae6, #a855f7);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    aside h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    aside p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.95;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    section[role="form"] {
+      width: 100%;
+      max-width: 380px;
+      padding: 40px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    section[role="form"] h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #222;
+      font-size: 1.6rem;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #7c3aed;
+      outline: none;
+      box-shadow: 0 0 6px rgba(124, 58, 237, 0.4);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #7c3aed, #9333ea);
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #5b21b6, #7e22ce);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(124,58,237,0.4);
+    }
+
+    .extra {
+      margin-top: 15px;
+      font-size: 13px;
+      text-align: center;
+      color: #555;
+    }
+
+    .extra a {
+      color: #7c3aed;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .extra a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      aside {
+        display: none;
+      }
+      main {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- CRM reklama -->
+    <aside>
+      <div>
+        <h1>CRM Bilan Ishlashni Osonlashtiring 🚀</h1>
+        <p>
+          Bizning CRM tizimimiz yordamida biznesingizni samarali boshqaring.
+          Mijozlar bilan ishlash, savdolarni nazorat qilish va rivojlanishni tezlashtiring.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Login form -->
+    <main>
+      <section role="form" aria-labelledby="login-title">
+        <h2 id="login-title">Kirish</h2>
+        <form action="#" method="POST" autocomplete="on">
+          <label for="username">Foydalanuvchi nomi</label>
+          <input type="text" id="username" name="username" placeholder="Username" required autocomplete="username">
+
+          <label for="password">Parol</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+          <button type="submit">Kirish</button>
+
+          <div class="extra">
+            <p><a href="#">Parolni unutdingizmi?</a></p>
+            <p>Hisobingiz yo‘qmi? <a href="#">Ro‘yxatdan o‘ting</a></p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

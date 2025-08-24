@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperAdmin Dashboard - CRM tizimi</title>
+  <meta name="description" content="SuperAdmin paneli orqali CRM foydalanuvchilar, leedlar va tizim sozlamalarini boshqaring.">
+  <link rel="stylesheet" rel="preload" as="style"  href="./AdminJS/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="toggleSidebar" aria-label="Sidebarni och/yop">
+      ☰
+    </button>
+    <h1 class="logo">CRM Admin</h1>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside id="sidebar" aria-label="Asosiy navigatsiya">
+      <nav role="navigation">
+        <ul>
+          <li>
+            <button data-section="dashboard" aria-controls="dashboard" aria-expanded="true" tabindex="0">
+              📊 Dashboard
+            </button>
+          </li>
+          <li>
+            <button data-section="users" aria-controls="users" aria-expanded="false" tabindex="0">
+              👥 Foydalanuvchilar
+            </button>
+          </li>
+          <li>
+            <button data-section="leads" aria-controls="leads" aria-expanded="false" tabindex="0">
+              📑 Leedlar
+            </button>
+          </li>
+          <li>
+            <button data-section="settings" aria-controls="settings" aria-expanded="false" tabindex="0">
+              ⚙️ Sozlamalar
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content" role="main" tabindex="-1">
+      <section id="dashboard" class="active" aria-labelledby="dashboard-title" role="region">
+        <h2 id="dashboard-title">📊 Dashboard</h2>
+        <p>Bu yerda umumiy statistikalar bo‘ladi.</p>
+        <img src="chart.png" alt="CRM statistikasi grafiki" loading="lazy" width="400" height="250">
+        <div class="box">
+         <div class="loader"></div>
+
+        </div>
+      </section>
+
+      <section id="users" aria-labelledby="users-title" role="region" hidden>
+        <h2 id="users-title">👥 Foydalanuvchilar</h2>
+        <p>Bu bo‘limda admin va support foydalanuvchilar boshqariladi.</p>
+      </section>
+
+      <section id="leads" aria-labelledby="leads-title" role="region" hidden>
+        <h2 id="leads-title">📑 Leedlar</h2>
+        <p>CRM ga tushgan barcha leedlar shu yerda ko‘rinadi.</p>
+      </section>
+
+      <section id="settings" aria-labelledby="settings-title" role="region" hidden>
+        <h2 id="settings-title">⚙️ Sozlamalar</h2>
+        <p>Tizim sozlamalari shu bo‘limdan boshqariladi.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="./AdminJS/admin.js" defer></script>
+  <script type="module">
+   import { showLoader, hideLoader } from "./Utils/Loader/loader.js";
+
+// Section bosilganda loader ko‘rsat
+document.querySelectorAll("aside nav button").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    showLoader("spinner"); // skeleton loader chiqadi
+    await new Promise(r => setTimeout(r, 1500)); // fake delay
+    hideLoader();
+  });
+});
+  </script>
+</body>
+</html>
